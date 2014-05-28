@@ -8,5 +8,6 @@ Bundle 'gmarik/vundle'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'guersam/vim-j'
 Bundle 'kien/ctrlp.vim'
+Bundle 'derekwyatt/vim-scala'
 
 filetype plugin indent on

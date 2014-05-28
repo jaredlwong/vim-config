@@ -1,11 +1,3 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/jaredlwong/install'
-let g:netrw_dirhist_2='/Users/jaredlwong/.dotfiles/.git'
-let g:netrw_dirhist_3='/Users/jaredlwong/.dotfiles/.git/modules/vim-pathogen'
-let g:netrw_dirhist_4='/Users/jaredlwong/Library/Saved Application State/com.jetbrains.pycharm.savedState'
-let g:netrw_dirhist_5='/Users/jaredlwong/.dotfiles/.git/modules/vim-markdown'
-let g:netrw_dirhist_6='/Users/jaredlwong/.dotfiles/lib/vim-airline/autoload/airline'
-let g:netrw_dirhist_7='/home/jaredlwong/.dotfiles/git'
-let g:netrw_dirhist_8='/home/jaredlwong/.dotfiles/.git/modules'
-let g:netrw_dirhist_9='/home/jaredlwong/.dotfiles/.git'
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/Users/jwong/fun/images'
