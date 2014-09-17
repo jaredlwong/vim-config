@@ -105,7 +105,12 @@ func main() {
 	}
 	dp := os.Getenv("DOTFILES")
 	if dp == "" {
-		panic("DOTFILES environment variable is not set")
+		var err error
+		dp, err = os.Getwd()
+		if err != nil {
+			fmt.Printf("Error in os.Getwd")
+			os.Exit(1)
+		}
 	}
 	installVim(dp, hp)
 }

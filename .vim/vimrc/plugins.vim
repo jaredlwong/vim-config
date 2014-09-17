@@ -7,7 +7,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'guersam/vim-j'
-Bundle 'kien/ctrlp.vim'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'plasticboy/vim-markdown'
 
 filetype plugin indent on

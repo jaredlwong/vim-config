@@ -66,6 +66,7 @@ set backspace=indent,eol,start " just for portability
 
 " 14 tabs and indenting
 set tabstop=8     " insert 8 spaces for every tab
+
 set shiftwidth=8  " insert 8 spaces if autoindent chooses to indent new line
 set softtabstop=0 " insert 0 spaces for every tab
 set noexpandtab     " don't convert tabs to spaces
@@ -74,6 +75,12 @@ set smarttab      " a <Tab> in an indent inserts shiftwidth spaces
 
 set autoindent  " autoindent the lines according to the previous lines
 set smartindent " don't always indent if obvious from syntax
+
+autocmd Filetype html       setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype ruby       setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd Filetype python     setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd Filetype javascript setlocal shiftwidth=8 softtabstop=0 noexpandtab
+autocmd Filetype c          setlocal shiftwidth=8 softtabstop=0 noexpandtab
 
 function TabToggle()
     if &expandtab
