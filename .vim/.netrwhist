@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/jwong/fun/images'
-let g:netrw_dirhist_2='/afs/athena.mit.edu/user/j/a/jaredw/.config'
-let g:netrw_dirhist_3='/afs/athena.mit.edu/user/j/a/jaredw/.local'
-let g:netrw_dirhist_4='/afs/athena.mit.edu/activity/m/mitlti/web_scripts/.scripts'
