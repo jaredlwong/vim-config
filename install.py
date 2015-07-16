@@ -33,7 +33,7 @@ def install_vim(installation_directory):
             shutil.rmtree(vimrc_link_name)
         os.symlink(vimrc_source, vimrc_link_name)
 
-    vundle_file_path = os.path.join(script_directory, '.vim', 'bundle', 'vundle')
+    vundle_file_path = os.path.join(script_directory, '.vim', 'bundle', 'vundle', 'autoload')
     if not os.path.isdir(vundle_file_path):
         cmd = ['git', 'submodule', 'update', '--init', '--recursive']
         logging.debug(' '.join(cmd))
