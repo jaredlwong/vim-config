@@ -15,9 +15,10 @@ set smartindent " don't always indent if obvious from syntax
 autocmd Filetype html       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype ruby       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype python     setlocal shiftwidth=4 softtabstop=4 expandtab
-autocmd Filetype javascript setlocal shiftwidth=8 softtabstop=0 noexpandtab
+autocmd Filetype javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype c          setlocal shiftwidth=8 softtabstop=0 noexpandtab
-autocmd Filetype c          setlocal shiftwidth=8 softtabstop=0 noexpandtab
+autocmd Filetype cpp        setlocal shiftwidth=8 softtabstop=0 noexpandtab
+autocmd Filetype json       setlocal shiftwidth=2 softtabstop=2 expandtab
 
 function TabToggle()
     if &expandtab
