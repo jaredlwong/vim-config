@@ -13,11 +13,13 @@ Plugin 'bling/vim-airline'
 
 " language specific stuff
 Plugin 'jnwhiteh/vim-golang'
+Plugin 'fatih/vim-go'
 Plugin 'guersam/vim-j'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'davidhalter/jedi-vim'
 
 call vundle#end()
 

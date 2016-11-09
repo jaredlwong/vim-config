@@ -69,6 +69,7 @@ set backspace=indent,eol,start " just for portability
 
 " 15 folding
 " nothing
+set nofoldenable
 
 " 16 diff mode
 " nothing

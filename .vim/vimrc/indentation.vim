@@ -20,6 +20,9 @@ autocmd FileType javascript setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType c          setlocal shiftwidth=8 softtabstop=0 noexpandtab
 autocmd FileType cpp        setlocal shiftwidth=8 softtabstop=0 noexpandtab
 autocmd FileType json       setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType haskell    setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType thrift     setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 expandtab
 
 function TabToggle()
     if &expandtab
