@@ -46,7 +46,7 @@ set splitright  " new window put right of the current window
 " nothing
 
 " 9 mouse
-set mouse=a
+set mouse=""
 
 " 10 printing
 " nothing

@@ -23,6 +23,7 @@ autocmd FileType json       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType haskell    setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType thrift     setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType xml        setlocal shiftwidth=4 softtabstop=4 expandtab
 
 function TabToggle()
     if &expandtab
