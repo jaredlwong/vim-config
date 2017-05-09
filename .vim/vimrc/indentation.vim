@@ -12,18 +12,23 @@ set smarttab      " a <Tab> in an indent inserts shiftwidth spaces
 set autoindent  " autoindent the lines according to the previous lines
 set smartindent " don't always indent if obvious from syntax
 
-autocmd FileType html       setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd BufRead,BufNewFile *.thrift     setf thrift
+autocmd BufRead,BufNewFile *.ql         setf sql
+
+autocmd FileType html       setlocal shiftwidth=8 softtabstop=0 noexpandtab
 autocmd FileType htmldjango setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType ruby       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType python     setlocal shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType javascript setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType c          setlocal shiftwidth=8 softtabstop=0 noexpandtab
 autocmd FileType cpp        setlocal shiftwidth=8 softtabstop=0 noexpandtab
 autocmd FileType json       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType haskell    setlocal shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType thrift     setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType thrift     setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType xml        setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType markdown   setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType java       setlocal shiftwidth=2 softtabstop=2 expandtab
 
 function TabToggle()
     if &expandtab

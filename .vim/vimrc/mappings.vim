@@ -1,4 +1,4 @@
-let mapleader = ' '
+let mapleader = '\<Space>'
 
 " navigate buffers with arrow keys
 nnoremap <left> :bprevious<CR>
