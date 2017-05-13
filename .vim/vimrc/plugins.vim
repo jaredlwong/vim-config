@@ -16,6 +16,7 @@ Plugin 'Valloric/YouCompleteMe'       " code completion
 Plugin 'MattesGroeger/vim-bookmarks'  " bookmarks
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-abolish'            " camel/underscore
+Plugin 'matze/vim-move'               " move code up and down visually A-k A-j
 
 " language specific stuff
 Plugin 'jnwhiteh/vim-golang'
@@ -35,3 +36,12 @@ call vundle#end()
 filetype plugin indent on
 
 source ~/.vim/plugin/thrift.vim
+
+" ycm
+" use ycm's goto def, instead of vim's default
+nnoremap gd :YcmCompleter GoTo<CR>
+nnoremap gl :YcmCompleter FixIt<CR>
+
+" matze/vim-move
+" use control as key
+let g:move_key_modifier = 'C'
