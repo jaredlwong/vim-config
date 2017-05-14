@@ -35,6 +35,7 @@ set list         " show trailing whitespace and tabs
 " nbsp for non-breakable white-space
 set listchars=tab:\|\ ,trail:·,extends:>,precedes:<,nbsp:+
 set number       " show line numbers
+set textwidth=96 " this is convenient on my macbook air.. when in split tabs
 
 " 5 syntax, highlighting and spelling
 syntax on       " by default don't highlight syntax
@@ -242,6 +243,8 @@ hi SpecialKey ctermfg=246
 "colorscheme getafe
 "hi Comment    ctermfg=LightBlue
 
+let &colorcolumn=join(range(96,999),",")
+highlight ColorColumn ctermbg=255
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " language settings/extensions
@@ -279,6 +282,23 @@ autocmd FileType tmpl       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType dash       setlocal shiftwidth=2 tabstop=2 softtabstop=0 noexpandtab
 autocmd FileType dash       setlocal nowrap
 
+autocmd FileType python cabbrev fc !yapf --style='{based_on_style: pep8, column_limit: 96}'
+autocmd FileType python cabbrev fi !isort
+	\    --line-width 120
+	\    --builtin collections
+	\    --builtin functools
+	\    --builtin itertools
+	\    --builtin logging
+	\    --builtin random
+	\    --thirdparty gevent
+	\    --thirdparty pinstatsd
+	\    --thirdparty mock
+	\    --thirdparty flask
+	\    --thirdparty thrift
+	\    --thirdparty tower
+	\    --thirdparty werkzeug
+	\    --force-single-line-imports
+	\    -
 
 function TabToggle()
     if &expandtab
