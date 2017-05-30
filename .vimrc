@@ -211,7 +211,26 @@ command -nargs=+ Gr execute 'silent Ggrep!' <q-args> | silent! botright cwindow 
 nnoremap gr :Gr <C-R>=expand("<cword>")<CR><CR>
 noremap <leader>h :set hlsearch! hlsearch?<CR>
 noremap <leader>g :cclose <bar> set hlsearch! hlsearch?<CR>
+" search current word
+noremap <leader>s viwy/<C-R>0<CR>N
 
+" turn width off nowrap
+nnoremap <leader>w :call WidthToggle()<CR>
+
+let g:width_toggle_on = 0
+function! WidthToggle()
+    if g:width_toggle_on
+        setlocal textwidth=96
+        setlocal wrap
+        let &colorcolumn=join(range(97,999),",")
+        let g:width_toggle_on = 0
+    else
+        setlocal textwidth=1000
+        setlocal nowrap
+        set colorcolumn=
+        let g:width_toggle_on = 1
+    endif
+endfunction
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " colors
 
@@ -243,7 +262,7 @@ hi SpecialKey ctermfg=246
 "colorscheme getafe
 "hi Comment    ctermfg=LightBlue
 
-let &colorcolumn=join(range(96,999),",")
+let &colorcolumn=join(range(97,999),",")
 highlight ColorColumn ctermbg=255
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -281,6 +300,7 @@ autocmd FileType java       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType tmpl       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType dash       setlocal shiftwidth=2 tabstop=2 softtabstop=0 noexpandtab
 autocmd FileType dash       setlocal nowrap
+autocmd FileType tmpl       setlocal nowrap
 
 autocmd FileType python cabbrev fc !yapf --style='{based_on_style: pep8, column_limit: 96}'
 autocmd FileType python cabbrev fi !isort
@@ -300,7 +320,7 @@ autocmd FileType python cabbrev fi !isort
 	\    --force-single-line-imports
 	\    -
 
-function TabToggle()
+function! TabToggle()
     if &expandtab
         set shiftwidth=8
         set softtabstop=0
@@ -312,3 +332,4 @@ function TabToggle()
     endif
 endfunction
 nmap <F9> mz:execute TabToggle()<CR>'z
+
