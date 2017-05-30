@@ -135,6 +135,7 @@ Plugin 'Valloric/YouCompleteMe'       " code completion
 Plugin 'MattesGroeger/vim-bookmarks'  " bookmarks
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-abolish'            " camel/underscore
+Plugin 'tpope/vim-commentary'         " comment things with `gc`
 
 " language specific stuff
 Plugin 'jnwhiteh/vim-golang'
