@@ -1,0 +1,1 @@
+- needed to copy ~/.vim/bundle/tabular/autoload/tabular.vim to ~/.vim/autoload/tabular.vim
