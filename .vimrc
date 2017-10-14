@@ -218,7 +218,7 @@ noremap <leader>s viwy/<C-R>0<CR>N
 " turn width off nowrap
 nnoremap <leader>w :call WidthToggle()<CR>
 
-let g:width_toggle_on = 0
+let g:width_toggle_on = 1
 function! WidthToggle()
     if g:width_toggle_on
         setlocal textwidth=96
@@ -232,6 +232,12 @@ function! WidthToggle()
         let g:width_toggle_on = 1
     endif
 endfunction
+
+setlocal textwidth=96
+setlocal wrap
+let &colorcolumn=join(range(97,999),",")
+let g:width_toggle_on = 0
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " colors
 
@@ -284,17 +290,17 @@ set autoindent  " autoindent the lines according to the previous lines
 set smartindent " don't always indent if obvious from syntax
 
 
-autocmd FileType html       setlocal shiftwidth=8 softtabstop=0 noexpandtab
+autocmd FileType html       setlocal shiftwidth=2 softtabstop=4 expandtab
 autocmd FileType htmldjango setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType ruby       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType python     setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType c          setlocal shiftwidth=8 softtabstop=0 noexpandtab
-autocmd FileType cpp        setlocal shiftwidth=8 softtabstop=0 noexpandtab
+autocmd FileType cpp        setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType json       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType haskell    setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType thrift     setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType xml        setlocal shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType xml        setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType markdown   setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType java       setlocal shiftwidth=2 softtabstop=2 expandtab
