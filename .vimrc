@@ -131,7 +131,7 @@ Plugin 'scrooloose/nerdtree'          " file browser
 Plugin 'bling/vim-airline'            " status line
 Plugin 'ctrlpvim/ctrlp.vim'           " file search
 Plugin 'tpope/vim-fugitive'           " git
-Plugin 'Valloric/YouCompleteMe'       " code completion
+" Plugin 'Valloric/YouCompleteMe'       " code completion
 Plugin 'MattesGroeger/vim-bookmarks'  " bookmarks
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-abolish'            " camel/underscore
@@ -215,28 +215,6 @@ noremap <leader>g :cclose <bar> set hlsearch! hlsearch?<CR>
 " search current word
 noremap <leader>s viwy/<C-R>0<CR>N
 
-" turn width off nowrap
-nnoremap <leader>w :call WidthToggle()<CR>
-
-let g:width_toggle_on = 1
-function! WidthToggle()
-    if g:width_toggle_on
-        setlocal textwidth=96
-        setlocal wrap
-        let &colorcolumn=join(range(97,999),",")
-        let g:width_toggle_on = 0
-    else
-        setlocal textwidth=1000
-        setlocal nowrap
-        set colorcolumn=
-        let g:width_toggle_on = 1
-    endif
-endfunction
-
-setlocal textwidth=96
-setlocal wrap
-let &colorcolumn=join(range(97,999),",")
-let g:width_toggle_on = 0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " colors
@@ -269,8 +247,8 @@ hi SpecialKey ctermfg=246
 "colorscheme getafe
 "hi Comment    ctermfg=LightBlue
 
-let &colorcolumn=join(range(97,999),",")
-highlight ColorColumn ctermbg=255
+" let &colorcolumn=join(range(97,999),",")
+" highlight ColorColumn ctermbg=255
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " language settings/extensions
@@ -308,6 +286,7 @@ autocmd FileType tmpl       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType dash       setlocal shiftwidth=2 tabstop=2 softtabstop=0 noexpandtab
 autocmd FileType dash       setlocal nowrap
 autocmd FileType tmpl       setlocal nowrap
+autocmd FileType bzl        setlocal shiftwidth=4 softtabstop=4 expandtab
 
 autocmd FileType python cabbrev fc !yapf --style='{based_on_style: pep8, column_limit: 96}'
 autocmd FileType python cabbrev fi !isort
@@ -340,3 +319,31 @@ function! TabToggle()
 endfunction
 nmap <F9> mz:execute TabToggle()<CR>'z
 
+
+" turn width off nowrap
+" nnoremap <leader>w :call WidthToggle()<CR>
+" let g:width_toggle_on = 1
+" function! WidthToggle()
+"     if g:width_toggle_on
+"         setlocal textwidth=96
+"         setlocal wrap
+"         let &colorcolumn=join(range(97,999),",")
+"         let g:width_toggle_on = 0
+"     else
+"         setlocal textwidth=1000
+"         setlocal nowrap
+"         set colorcolumn=
+"         let g:width_toggle_on = 1
+"     endif
+" endfunction
+" let &colorcolumn=+0
+" let g:width_toggle_on = 0
+" let &colorcolumn=join(range(97,999),",")
+
+setlocal wrap
+" color everything grey
+highlight ColorColumn ctermbg=255
+" default to 96 because it's half the size of my macbook air
+setlocal textwidth=96
+autocmd FileType java setlocal textwidth=100
+autocmd FileType * let &colorcolumn=join(range(&textwidth,999),",")
