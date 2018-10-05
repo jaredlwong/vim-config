@@ -232,12 +232,12 @@ set t_Co=256
 
 " syntax enable
 " set background=light
-" colorscheme solarized
+colorscheme solarized
 
 hi CursorLine ctermbg=234
 hi CursorLine ctermfg=15
 
-colorscheme pyte
+"colorscheme pyte
 hi Comment        ctermfg=246
 hi pythonFunction ctermfg=4
 
@@ -342,7 +342,7 @@ nmap <F9> mz:execute TabToggle()<CR>'z
 
 setlocal wrap
 " color everything grey
-highlight ColorColumn ctermbg=255
+highlight ColorColumn ctermbg=235
 " default to 96 because it's half the size of my macbook air
 setlocal textwidth=96
 autocmd FileType java setlocal textwidth=100
