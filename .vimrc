@@ -35,7 +35,6 @@ set list         " show trailing whitespace and tabs
 " nbsp for non-breakable white-space
 set listchars=tab:\|\ ,trail:·,extends:>,precedes:<,nbsp:+
 set number       " show line numbers
-set textwidth=96 " this is convenient on my macbook air.. when in split tabs
 
 " 5 syntax, highlighting and spelling
 syntax on       " by default don't highlight syntax
@@ -127,15 +126,16 @@ call vundle#begin()
 " bootstrap vundle
 Plugin 'gmarik/vundle'
 
-Plugin 'scrooloose/nerdtree'          " file browser
-Plugin 'bling/vim-airline'            " status line
-Plugin 'ctrlpvim/ctrlp.vim'           " file search
-Plugin 'tpope/vim-fugitive'           " git
+Plugin 'scrooloose/nerdtree'            " file browser
+Plugin 'bling/vim-airline'              " status line
+Plugin 'vim-airline/vim-airline-themes' " status line themes
+Plugin 'ctrlpvim/ctrlp.vim'             " file search
+Plugin 'tpope/vim-fugitive'             " git
 " Plugin 'Valloric/YouCompleteMe'       " code completion
-Plugin 'MattesGroeger/vim-bookmarks'  " bookmarks
+Plugin 'MattesGroeger/vim-bookmarks'    " bookmarks
 Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-abolish'            " camel/underscore
-Plugin 'tpope/vim-commentary'         " comment things with `gc`
+Plugin 'tpope/vim-abolish'              " camel/underscore
+Plugin 'tpope/vim-commentary'           " comment things with `gc`
 
 " language specific stuff
 Plugin 'jnwhiteh/vim-golang'
@@ -145,10 +145,15 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'elixir-editors/vim-elixir'
 
 " python
 Plugin 'fisadev/vim-isort'              " sort python imports
 Plugin 'Vimjas/vim-python-pep8-indent'  " indent like pep8 likes
+
+" react
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 
@@ -230,25 +235,27 @@ set t_Co=256
 "colorscheme solarized
 "colorscheme vividchalk
 
-" syntax enable
-" set background=light
-colorscheme solarized
-
-hi CursorLine ctermbg=234
-hi CursorLine ctermfg=15
-
-"colorscheme pyte
-hi Comment        ctermfg=246
-hi pythonFunction ctermfg=4
-
-hi SpecialKey ctermbg=none
-hi SpecialKey ctermfg=246
+"syntax enable
+"set background=dark
+"colorscheme solarized
+"
+"hi CursorLine ctermbg=234
+"hi CursorLine ctermfg=15
+"
+""colorscheme pyte
+"hi Comment        ctermfg=246
+"hi pythonFunction ctermfg=4
+"
+"hi SpecialKey ctermbg=none
+"hi SpecialKey ctermfg=246
 
 "colorscheme getafe
 "hi Comment    ctermfg=LightBlue
 
 " let &colorcolumn=join(range(97,999),",")
 " highlight ColorColumn ctermbg=255
+
+let g:airline_theme='papercolor'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " language settings/extensions
@@ -281,6 +288,8 @@ autocmd FileType sql        setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType xml        setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType markdown   setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType elixir     setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType java       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType tmpl       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType dash       setlocal shiftwidth=2 tabstop=2 softtabstop=0 noexpandtab
@@ -342,8 +351,8 @@ nmap <F9> mz:execute TabToggle()<CR>'z
 
 setlocal wrap
 " color everything grey
-highlight ColorColumn ctermbg=235
+"highlight ColorColumn ctermbg=235
 " default to 96 because it's half the size of my macbook air
-setlocal textwidth=96
+" setlocal textwidth=96
 autocmd FileType java setlocal textwidth=100
-autocmd FileType * let &colorcolumn=join(range(&textwidth,999),",")
+" autocmd FileType * let &colorcolumn=join(range(&textwidth,999),",")
