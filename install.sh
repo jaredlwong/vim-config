@@ -1,6 +1,8 @@
 #!/bin/sh
 # shellcheck shell=dash
 
+# Helpfully stolen commands from https://sh.rustup.rs
+
 set -u
 
 link() {
