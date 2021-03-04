@@ -35,6 +35,7 @@ main() {
     need_cmd vim
     need_cmd git
 
+    ensure_directory_doest_not_exist "${HOME}/vim-config"
     ensure git clone https://github.com/jaredlwong/vim-config.git "${HOME}/vim-config"
     ensure link "${HOME}/vim-config"
     ensure install_vundle
@@ -48,6 +49,38 @@ need_cmd() {
 
 check_cmd() {
     command -v "$1" > /dev/null 2>&1
+}
+
+ensure_directory_does_not_exist() {
+    local dir_path=$1
+    if [ ! -d "${dir_path}" ]; then
+        err "Directory ${dir_path} exists"
+        exit 1
+    fi
+}
+
+ensure_directory_exists() {
+    local dir_path=$1
+    if [ -d "${dir_path}" ]; then
+        err "directory ${dir_path} does not exist"
+        exit 1
+    fi
+}
+
+ensure_file_does_not_exist() {
+    local file_path=$1
+    if [ ! -e "${file_path}" ]; then
+        err "file ${file_path} exists"
+        exit 1
+    fi
+}
+
+ensure_file_exists() {
+    local file_path=$1
+    if [ -e "${file_path}" ]; then
+        err "file ${file_path} does not exist"
+        exit 1
+    fi
 }
 
 say() {
