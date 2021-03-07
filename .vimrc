@@ -146,7 +146,10 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'elixir-editors/vim-elixir'
+Plugin 'ocaml/vim-ocaml'
+Plugin 'udalov/kotlin-vim'
 
 " python
 Plugin 'fisadev/vim-isort'              " sort python imports
@@ -289,7 +292,9 @@ autocmd FileType xml        setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType markdown   setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType ocaml      setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType elixir     setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType kotlin     setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType java       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType tmpl       setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType dash       setlocal shiftwidth=2 tabstop=2 softtabstop=0 noexpandtab

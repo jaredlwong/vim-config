@@ -9,19 +9,19 @@ link() {
     local vim_config_dir=$1
 
     if [ ! -e "${HOME}/.vim" ]; then
-        ln -s ${vim_config_dir}/.vim ${HOME}/.vim
+        ln -s "${vim_config_dir}/.vim" "${HOME}/.vim"
     else
         err "Couldn't link ~/.vim since it already exists"
     fi
 
     if [ ! -e "${HOME}/.vimrc" ]; then
-        ln -s ${vim_config_dir}/.vimrc ${HOME}/.vimrc
+        ln -s "${vim_config_dir}/.vimrc" "${HOME}/.vimrc"
     else
         err "Couldn't link ~/.vimrc since it already exists"
     fi
 
     if [ ! -d "${vim_config_dir}/.vim/bundle/vundle/autoload" ]; then
-        (cd ${vim_config_dir} && git submodule update --init --recursive)
+        (cd "${vim_config_dir}" && git submodule update --init --recursive)
     else
         err "Couldn't install vundle since .vim/bundle/vundle/autoload already exists"
     fi
@@ -35,7 +35,7 @@ main() {
     need_cmd vim
     need_cmd git
 
-    ensure_directory_doest_not_exist "${HOME}/vim-config"
+    ensure_directory_does_not_exist "${HOME}/vim-config"
     ensure git clone https://github.com/jaredlwong/vim-config.git "${HOME}/vim-config"
     ensure link "${HOME}/vim-config"
     ensure install_vundle
