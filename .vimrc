@@ -292,6 +292,7 @@ autocmd FileType xml        setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType markdown   setlocal shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType javascript setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType typescript setlocal shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType typescriptreact setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType ocaml      setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType elixir     setlocal shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType kotlin     setlocal shiftwidth=2 softtabstop=2 expandtab

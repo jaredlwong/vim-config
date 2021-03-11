@@ -53,7 +53,7 @@ check_cmd() {
 
 ensure_directory_does_not_exist() {
     local dir_path=$1
-    if [ ! -d "${dir_path}" ]; then
+    if [ -d "${dir_path}" ]; then
         err "Directory ${dir_path} exists"
         exit 1
     fi
@@ -61,7 +61,7 @@ ensure_directory_does_not_exist() {
 
 ensure_directory_exists() {
     local dir_path=$1
-    if [ -d "${dir_path}" ]; then
+    if [ ! -d "${dir_path}" ]; then
         err "directory ${dir_path} does not exist"
         exit 1
     fi
@@ -69,7 +69,7 @@ ensure_directory_exists() {
 
 ensure_file_does_not_exist() {
     local file_path=$1
-    if [ ! -e "${file_path}" ]; then
+    if [ -e "${file_path}" ]; then
         err "file ${file_path} exists"
         exit 1
     fi
@@ -77,7 +77,7 @@ ensure_file_does_not_exist() {
 
 ensure_file_exists() {
     local file_path=$1
-    if [ -e "${file_path}" ]; then
+    if [ ! -e "${file_path}" ]; then
         err "file ${file_path} does not exist"
         exit 1
     fi
